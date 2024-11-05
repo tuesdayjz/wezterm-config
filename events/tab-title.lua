@@ -1,7 +1,6 @@
 ------------------------------------------------------------------------------------------
 -- Inspired by https://github.com/wez/wezterm/discussions/628#discussioncomment-1874614 --
 ------------------------------------------------------------------------------------------
-
 local wezterm = require('wezterm')
 local Cells = require('utils.cells')
 
@@ -36,17 +35,44 @@ local RENDER_VARIANTS = {
 ---@type table<string, Cells.SegmentColors>
 -- stylua: ignore
 local colors = {
-   text_default          = { bg = '#45475A', fg = '#1C1B19' },
-   text_hover            = { bg = '#587D8C', fg = '#1C1B19' },
-   text_active           = { bg = '#7FB4CA', fg = '#11111B' },
+  text_default = {
+    bg = '#45475A',
+    fg = '#1C1B19'
+  },
+  text_hover = {
+    bg = '#587D8C',
+    fg = '#1C1B19'
+  },
+  text_active = {
+    bg = '#7FB4CA',
+    fg = '#11111B'
+  },
 
-   unseen_output_default = { bg = '#45475A', fg = '#FFA066' },
-   unseen_output_hover   = { bg = '#587D8C', fg = '#FFA066' },
-   unseen_output_active  = { bg = '#7FB4CA', fg = '#FFA066' },
+  unseen_output_default = {
+    bg = '#45475A',
+    fg = '#FFA066'
+  },
+  unseen_output_hover = {
+    bg = '#587D8C',
+    fg = '#FFA066'
+  },
+  unseen_output_active = {
+    bg = '#7FB4CA',
+    fg = '#FFA066'
+  },
 
-   scircle_default       = { bg = 'rgba(0, 0, 0, 0.4)', fg = '#45475A' },
-   scircle_hover         = { bg = 'rgba(0, 0, 0, 0.4)', fg = '#587D8C' },
-   scircle_active        = { bg = 'rgba(0, 0, 0, 0.4)', fg = '#7FB4CA' },
+  scircle_default = {
+    bg = 'rgba(0, 0, 0, 0.4)',
+    fg = '#45475A'
+  },
+  scircle_hover = {
+    bg = 'rgba(0, 0, 0, 0.4)',
+    fg = '#587D8C'
+  },
+  scircle_active = {
+    bg = 'rgba(0, 0, 0, 0.4)',
+    fg = '#7FB4CA'
+  }
 }
 
 ---@param proc string
@@ -197,9 +223,19 @@ M.setup = function()
       window:perform_action(
          wezterm.action.PromptInputLine({
             description = wezterm.format({
-               { Foreground = { Color = '#FFFFFF' } },
-               { Attribute = { Intensity = 'Bold' } },
-               { Text = 'Enter new name for tab' },
+               {
+                  Foreground = {
+                     Color = '#FFFFFF',
+                  },
+               },
+               {
+                  Attribute = {
+                     Intensity = 'Bold',
+                  },
+               },
+               {
+                  Text = 'Enter new name for tab',
+               },
             }),
             action = wezterm.action_callback(function(_window, _pane, line)
                if line ~= nil then

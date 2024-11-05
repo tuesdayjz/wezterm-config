@@ -37,12 +37,21 @@ local charging_icons = {
    nf.md_battery_charging,
 }
 
-   ---@type table<string, Cells.SegmentColors>
+---@type table<string, Cells.SegmentColors>
 -- stylua: ignore
 local colors = {
-   date      = { fg = '#fab387', bg = 'rgba(0, 0, 0, 0.4)' },
-   battery   = { fg = '#f9e2af', bg = 'rgba(0, 0, 0, 0.4)' },
-   separator = { fg = '#74c7ec', bg = 'rgba(0, 0, 0, 0.4)' }
+  date = {
+    fg = '#fab387',
+    bg = 'rgba(0, 0, 0, 0.4)'
+  },
+  battery = {
+    fg = '#f9e2af',
+    bg = 'rgba(0, 0, 0, 0.4)'
+  },
+  separator = {
+    fg = '#74c7ec',
+    bg = 'rgba(0, 0, 0, 0.4)'
+  }
 }
 
 local cells = Cells:new()

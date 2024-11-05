@@ -39,7 +39,7 @@ end
 ---   During the initial load of the config, this function can only invoked in `wezterm.lua`.
 ---   WezTerm's fs utility `glob` (used in this function) works by running on a spawned child process.
 ---   This throws a coroutine error if the function is invoked in outside of `wezterm.lua` in the -
----   initial load of the Terminal config.
+---    load of the Terminal config.
 function BackDrops:set_files()
    self.files = wezterm.glob(wezterm.config_dir .. '/backdrops/' .. GLOB_PATTERN)
    return self
@@ -58,11 +58,15 @@ end
 function BackDrops:create_opts()
    return {
       {
-         source = { File = self.files[self.current_idx] },
+         source = {
+            File = self.files[self.current_idx],
+         },
          horizontal_align = 'Center',
       },
       {
-         source = { Color = colors.background },
+         source = {
+            Color = colors.background,
+         },
          height = '120%',
          width = '120%',
          vertical_offset = '-10%',
@@ -89,7 +93,9 @@ function BackDrops:_set_focus_opt(window)
    local opts = {
       background = {
          {
-            source = { Color = self.focus_color },
+            source = {
+               Color = self.focus_color,
+            },
             height = '120%',
             width = '120%',
             vertical_offset = '-10%',

@@ -12,11 +12,21 @@ local M = {}
 ---@type table<string, Cells.SegmentColors>
 -- stylua: ignore
 local colors = {
-   label_text   = { fg = '#CDD6F4' },
-   icon_default = { fg = '#89B4FA' },
-   icon_wsl     = { fg = '#FAB387' },
-   icon_ssh     = { fg = '#F38BA8' },
-   icon_unix    = { fg = '#CBA6F7' },
+  label_text = {
+    fg = '#CDD6F4'
+  },
+  icon_default = {
+    fg = '#89B4FA'
+  },
+  icon_wsl = {
+    fg = '#FAB387'
+  },
+  icon_ssh = {
+    fg = '#F38BA8'
+  },
+  icon_unix = {
+    fg = '#CBA6F7'
+  }
 }
 
 local cells = Cells:new()
@@ -55,7 +65,9 @@ local function build_choices()
          label = wezterm.format(cells:render({ 'icon_wsl', 'label_text' })),
       })
       table.insert(choices_data, {
-         domain = { DomainName = v.name },
+         domain = {
+            DomainName = v.name,
+         },
       })
       idx = idx + 1
    end
@@ -68,7 +80,9 @@ local function build_choices()
          label = wezterm.format(cells:render({ 'icon_ssh', 'label_text' })),
       })
       table.insert(choices_data, {
-         domain = { DomainName = v.name },
+         domain = {
+            DomainName = v.name,
+         },
       })
       idx = idx + 1
    end
@@ -81,7 +95,9 @@ local function build_choices()
          label = wezterm.format(cells:render({ 'icon_unix', 'label_text' })),
       })
       table.insert(choices_data, {
-         domain = { DomainName = v.name },
+         domain = {
+            DomainName = v.name,
+         },
       })
       idx = idx + 1
    end

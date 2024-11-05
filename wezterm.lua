@@ -1,8 +1,7 @@
 local Config = require('config')
 
 require('utils.backdrops')
-   :set_files()
-   -- :set_focus('#000000')
+   :set_files() -- :set_focus('#000000')
    :random()
 
 require('events.right-status').setup()

@@ -7,37 +7,31 @@ return {
 
    scrollback_lines = 20000,
 
-   hyperlink_rules = {
-      -- Matches: a URL in parens: (URL)
+   hyperlink_rules = { -- Matches: a URL in parens: (URL)
       {
          regex = '\\((\\w+://\\S+)\\)',
          format = '$1',
          highlight = 1,
-      },
-      -- Matches: a URL in brackets: [URL]
+      }, -- Matches: a URL in brackets: [URL]
       {
          regex = '\\[(\\w+://\\S+)\\]',
          format = '$1',
          highlight = 1,
-      },
-      -- Matches: a URL in curly braces: {URL}
+      }, -- Matches: a URL in curly braces: {URL}
       {
          regex = '\\{(\\w+://\\S+)\\}',
          format = '$1',
          highlight = 1,
-      },
-      -- Matches: a URL in angle brackets: <URL>
+      }, -- Matches: a URL in angle brackets: <URL>
       {
          regex = '<(\\w+://\\S+)>',
          format = '$1',
          highlight = 1,
-      },
-      -- Then handle URLs not wrapped in brackets
+      }, -- Then handle URLs not wrapped in brackets
       {
          regex = '\\b\\w+://\\S+[)/a-zA-Z0-9-]+',
          format = '$0',
-      },
-      -- implicit mailto link
+      }, -- implicit mailto link
       {
          regex = '\\b\\w+@[\\w-]+(\\.[\\w-]+)+\\b',
          format = 'mailto:$0',
